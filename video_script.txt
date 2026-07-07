@@ -1,0 +1,19 @@
+Title: Local Services Concierge Agent for Bhubaneswar
+
+0:00 - 0:30 Opening
+Hi, this is my Kaggle AI Agents Intensive Vibe Coding Capstone. I built a Local Services Concierge Agent for Bhubaneswar. The problem is simple: when something breaks at home, people need a trusted professional, a clear price estimate, and reliable repair updates without calling five different vendors.
+
+0:30 - 1:20 Problem Demo
+Imagine a user types: “Book an urgent AC repair in Patia.” The agent understands that this is appliance repair, the location is Patia, and the request is urgent. It returns a verified professional, available slots, pricing expectations, and can confirm a booking.
+
+1:20 - 2:20 Architecture
+The system uses an ADK-style multi-agent architecture. The intake agent parses natural language. The safety agent validates and minimizes user data. The matching agent finds professionals. The booking agent confirms slots. The repair tracking agent checks repair status. Each agent has one job, which makes the workflow easier to audit and safer to extend.
+
+2:20 - 3:20 MCP Explanation
+The agent does not hallucinate availability or prices. It calls an MCP server implemented in mcp_server/index.ts. The MCP tools expose mock professional availability, pricing catalogs, booking confirmation, and repair status. All inputs are validated with schemas, and there are no API keys or passwords in the project.
+
+3:20 - 4:20 Simulated Demo
+First request: “Find an urgent AC repair technician in Patia today.” The agent routes through intake, safety, and matching, then returns ChillFix Appliances with slots and pricing. Second request: “Please book a plumber for a leaking tap in Khandagiri.” The booking agent confirms Utkal PipeCare and returns a booking ID. Third request: “Track BBSR-AC-7421.” The repair tracking agent returns the current state, ETA, and latest update.
+
+4:20 - 5:00 Deployment and Closing
+The project is ready for Vercel. vercel.json maps /api/agent to the concierge and /api/mcp to the tool server. package.json includes strict TypeScript checks and a smoke test. This submission demonstrates multi-agent routing, secure MCP tool access, deployability, architecture documentation, and a complete user-centered service workflow for Bhubaneswar.
