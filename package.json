@@ -1,0 +1,35 @@
+{
+  "name": "bhubaneswar-local-services-concierge-agent",
+  "version": "1.0.0",
+  "description": "Zero-shot Kaggle AI Agents Intensive capstone: ADK-style local services concierge with MCP tools and Vercel deployment.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx vercel dev",
+    "start": "node dist/agent.js",
+    "build": "tsc --noEmit",
+    "check": "tsc --noEmit",
+    "test:smoke": "node --loader ts-node/esm scripts/smoke_test.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.4",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "kaggle",
+    "ai-agents",
+    "adk",
+    "mcp",
+    "vercel",
+    "concierge"
+  ],
+  "license": "MIT"
+}
